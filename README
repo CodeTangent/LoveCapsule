@@ -1,0 +1,88 @@
+# 💌 Love Capsule
+
+**Love Capsule** é um projeto de site desenvolvido para permitir que uma pessoa envie uma **carta digital interativa** para alguém especial.
+
+A proposta é transformar uma simples mensagem em uma **experiência digital personalizada**, que pode ser acessada facilmente pelo celular através de um link ou QR Code.
+
+---
+
+## ✨ Funcionalidades
+
+O site apresenta uma pequena jornada emocional composta por:
+
+* 💬 **Mensagem personalizada**
+* 📅 **Linha do tempo do relacionamento**
+* 🖼 **Galeria de fotos**
+* 🎵 **Música especial do casal**
+* 💭 **Memórias aleatórias**
+* 📱 **QR Code para compartilhamento**
+
+A ideia é criar uma forma moderna de entregar uma lembrança afetiva.
+
+---
+
+## 🧠 Estrutura do projeto
+
+O projeto foi desenvolvido utilizando um **modelo de página reutilizável**, onde o layout permanece fixo e apenas os dados do casal são alterados.
+
+Estrutura básica:
+
+```text
+index.html   → Estrutura da página
+dados.js     → Informações personalizadas
+img/         → Fotos
+audio/       → Música
+```
+
+Isso permite criar novas páginas rapidamente apenas modificando o arquivo de dados.
+
+---
+
+## ⚙️ Tecnologias utilizadas
+
+* IA (maior parte foi vibe code)
+* HTML5
+* CSS3
+* JavaScript
+* Bootstrap
+* Python (geração de QR Code)
+* Deploy via Vercel
+
+---
+
+## 📱 Características
+
+* Design **responsivo (mobile-first)**
+* Interface simples e emocional
+* Fácil personalização
+* Experiência acessível em qualquer smartphone
+* Possibilidade de compartilhamento via QR Code
+
+---
+
+## 🚀 Ideias para evolução futura
+
+Algumas melhorias planejadas para versões futuras:
+
+* ⏳ contador de tempo do relacionamento
+* ❤️ animações visuais
+* 📝 criação de páginas via formulário
+* ⚡ geração automática de páginas personalizadas
+
+---
+
+## 📜 Licença
+
+Este repositório foi publicado com **No License**.
+
+Isso significa que o código **não está autorizado para uso, modificação ou redistribuição sem permissão do autor**.
+
+---
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Renan Lima**
+
+📍 Porto Alegre - RS
+📧 [developerchsharp14@gmail.com](mailto:developerchsharp14@gmail.com)
+🔗 LinkedIn: https://www.linkedin.com/in/renan-gabriel-lima

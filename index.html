@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>História</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#f5e9ff,#fff);
+min-height:100vh;
+}
+
+.hero{
+padding:80px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-weight:600;
+font-size:clamp(2rem,5vw,3rem);
+}
+
+.hero p{
+font-size:clamp(1rem,3vw,1.3rem);
+}
+
+.section{
+padding:60px 20px;
+}
+
+.card{
+border-radius:1.5rem;
+}
+
+.timeline-item{
+border-left:3px solid #6f42c1;
+padding-left:20px;
+margin-bottom:30px;
+}
+
+.memoria-box{
+min-height:120px;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+font-size:1.2rem;
+}
+
+img{
+width:100%;
+height:auto;
+transition:transform .3s;
+}
+
+img:hover{
+transform:scale(1.05);
+}
+
+footer{
+text-align:center;
+padding:30px;
+font-size:.9rem;
+opacity:.7;
+}
+
+.musica-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+z-index:999;
+}
+
+.musica-btn button{
+padding:12px 18px;
+font-size:16px;
+border-radius:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<section class="hero">
+
+<h1 id="titulo"></h1>
+
+<p class="mt-3 fs-5" id="subtitulo"></p>
+
+</section>
+
+
+<section class="section container">
+
+<h2 class="mb-4">
+<i class="fa-solid fa-timeline"></i> Linha do Tempo
+</h2>
+
+<div id="timeline"></div>
+
+</section>
+
+
+<section class="section bg-light">
+
+<div class="container text-center">
+
+<h2 class="mb-4">
+<i class="fa-solid fa-heart"></i> Memória Aleatória
+</h2>
+
+<button class="btn btn-primary btn-lg mb-4" onclick="gerarMemoria()">
+Gerar memória 💫
+</button>
+
+<div class="card shadow p-4 memoria-box" id="memoriaBox">
+Clique no botão para lembrar algo especial ✨
+</div>
+
+</div>
+
+</section>
+
+
+<section class="section container">
+
+<h2 class="mb-4">
+<i class="fa-solid fa-image"></i> Alguns Momentos
+</h2>
+
+<div class="row g-4" id="galeria"></div>
+
+</section>
+
+
+<section class="section bg-light">
+
+<div class="container">
+
+<h2 class="mb-4">
+<i class="fa-solid fa-book"></i> Nossa História
+</h2>
+
+<div class="card shadow p-4" id="historia"></div>
+
+</div>
+
+</section>
+
+
+<footer>
+Feito com 💜, código e um pouco de loucura.
+</footer>
+
+
+<audio id="musica" loop></audio>
+
+
+<div class="musica-btn">
+
+<button id="btnMusica" class="btn btn-dark" onclick="toggleMusica()">
+🎵 Ativar música
+</button>
+
+</div>
+
+
+<script src="dados.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+document.getElementById("titulo").innerText = casal.titulo
+document.getElementById("subtitulo").innerText = casal.subtitulo
+
+const audio = document.getElementById("musica")
+audio.src = casal.musica
+
+const timelineDiv = document.getElementById("timeline")
+
+casal.timeline.forEach(item => {
+
+timelineDiv.innerHTML += `
+<div class="timeline-item">
+<strong>${item.titulo}</strong>
+<p>${item.texto}</p>
+</div>
+`
+
+})
+
+const galeria = document.getElementById("galeria")
+
+casal.fotos.forEach(foto => {
+
+galeria.innerHTML += `
+<div class="col-md-4">
+<img src="${foto}" class="img-fluid rounded shadow">
+</div>
+`
+
+})
+
+const historia = document.getElementById("historia")
+
+casal.historia.forEach(p => {
+
+historia.innerHTML += `<p>${p}</p>`
+
+})
+
+const memorias = casal.memorias
+
+function gerarMemoria(){
+
+const box = document.getElementById("memoriaBox")
+
+const m = memorias[Math.floor(Math.random()*memorias.length)]
+
+box.innerHTML = m
+
+}
+
+const botao = document.getElementById("btnMusica")
+
+function toggleMusica(){
+
+if(audio.paused){
+
+audio.play()
+botao.innerHTML="🔇 Desativar música"
+
+}else{
+
+audio.pause()
+botao.innerHTML="🎵 Ativar música"
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
