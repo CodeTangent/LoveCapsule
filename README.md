@@ -6,6 +6,13 @@ A proposta é simples: ao invés de enviar apenas uma mensagem, você entrega um
 
 ---
 
+## 🔗 Demonstração
+
+👉 **Ver demo:**  
+https://lovecapsule2-oc8zd3p54-renangblima-5115s-projects.vercel.app/
+
+---
+
 ## 🎯 Proposta
 
 Criar uma forma moderna, emocional e memorável de presentear alguém, utilizando tecnologia para potencializar conexões humanas.
